@@ -97,7 +97,7 @@ class Embedding(Module):
         self.sparse = sparse
 
     def reset_parameters(self):
-        self.weight.data.normal_(0, 1)
+        self.weight.data.normal_(0, 0.01)
         if self.padding_idx is not None:
             self.weight.data[self.padding_idx].fill_(0)
 
